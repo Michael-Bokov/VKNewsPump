@@ -1,0 +1,52 @@
+#folders
+chroma_db/
+data/
+logs/
+old/
+ollama-data/
+pipeline_results/
+results/
+test/
+
+.env/
+*.env
+*.env/
+
+#files
+del_n_b.py
+generated_post.txt
+lg_simple_pipeline_notFinish.py
+langgraph_pipeline_working.py
+langgraph_pipeline_clever_notFinish.py
+
+
+#pip files
+=*/
+=*/
+=*.*.*/
+=0.*/
+=*.0/
+=*.0.*/
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+venv*/
+*.venv/
+
+# Python packages и wheels
+*.whl
+*.egg
+wheels/  # если у вас есть такая папка
+site-packages/
+
+# Версионные папки (0.28.0, 4.40.0 и т.д.)
+[0-9]*.*.*/
+*.*.*/
+
+# Python кэш
+__pycache__/
+*.py[cod]
+.python-version
+=*/

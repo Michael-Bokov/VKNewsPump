@@ -1,0 +1,19 @@
+services:
+  ollama-7b:
+    image: ollama/ollama:latest
+    container_name: ollama-qwen-7b
+    ports:
+      - "11434:11434"
+    
+    # Все volumes в одном блоке
+    volumes:
+      - ollama_data:/root/.ollama  # Данные модели
+      - ./init.sh:/app/init.sh:ro    # Скрипт инициализации
+    
+    # Запускаем скрипт инициализации
+    entrypoint: ["/bin/bash", "/app/init.sh"]
+    
+    restart: unless-stopped
+    profiles: ["7b"]
+volumes:
+  ollama_data:
