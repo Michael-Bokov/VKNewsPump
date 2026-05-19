@@ -35,7 +35,74 @@ lg_ * - LangGraph версия, обертки на агенты
 docker-compose.yml -  Контейнер для Ollama c исполняемым init.sh для развертывания qwen2.5-7b внутри контейнера  
 6. langgraph_pipeline_with_langfuse.py - LangGraph пайплайн  
 
+LOGS:  
+ Langfuse инициализирован: https://cloud.langfuse.com
+Загружаем модель эмбеддингов: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|█████████████████████████████████████████████████| 199/199 [00:00<00:00, 1489.95it/s]
+/home/mike/VKNewsPump/database.py:35: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  print(f"✓ Модель загружена. Размерность: {self.embedding_model.get_sentence_embedding_dimension()}")
+✓ Модель загружена. Размерность: 384
+База инициализирована. Новостей в архиве: 4
+============================================================
+🚀 ЗАПУСК НОВОСТНОГО ПАЙПЛАЙНА С LANGFUSE
+============================================================
+📊 Создан Trace: news_pipeline_20260519_175219_1
+📊 Trace ID: news_pipeline_20260519_175219_1
+🌐 Langfuse Dashboard: https://cloud.langfuse.com
 
+📊 Статистика БД до выполнения:
+  • json_archive_count: 4
+  • chroma_collection_count: 4
+  • chroma_db_size_mb: 0.36
+  • json_archive_size_mb: 0.02
+  • embedding_model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+  • similarity_threshold: 0.75
+
+🔄 Выполняю пайплайн...
+
+📡 Шаг 1: Сбор новостей...
+📡 Собираем статьи с 2 источников...
+
+🔍 Google Research
+   Стратегия: download
+      📥 Скачиваем: https://research.google/blog/catalyzing-scientific...
+      ✅ Скачано: 5398 символов
+      📥 Скачиваем: https://research.google/blog/four-ways-google-rese...
+      ✅ Скачано: 11842 символов
+      📥 Скачиваем: https://research.google/blog/its-all-about-the-ang...
+      ✅ Скачано: 6440 символов
+   ✅ Найдено: 3 статей
+
+🔍 TechCrunch
+   Стратегия: download
+      📥 Скачиваем: https://techcrunch.com/2026/05/19/apple-announces-...
+      ✅ Скачано: 4126 символов
+      📥 Скачиваем: https://techcrunch.com/2026/05/19/survivor-stars-k...
+      ✅ Скачано: 5966 символов
+      📥 Скачиваем: https://techcrunch.com/2026/05/19/gamified-social-...
+      ✅ Скачано: 5011 символов
+   ✅ Найдено: 3 статей
+
+🎯 Всего собрано статей: 6
+
+🔍 Шаг 2: Дедупликация...
+
+🎯 Шаг 3: Выбор статьи...
+
+🔤 Шаг 4: Перевод статьи...
+🔤 Перевод статьи... (попытка 1)
+✅ Перевод готов (4743 символов)
+
+✍️ Шаг 5: Создание поста...
+✍️ Генерация поста для VK...
+✅ Пост сгенерирован (617 символов)
+
+📤 Шаг 6: Публикация в VK...
+📤 Публикация поста в VK (617 символов)...
+🖼️ Загружаем изображение: /home/mike/VKNewsPump/images/ai_default_1.jpg
+⚠️ Pillow не установлен, пропускаем проверку формата
+📤 Upload URL получен
 
 🔗 Добавлена ссылка: https://techcrunch.com/2026/05/19/gamified-social-media-network-status-announces-17m-funding-to-help-usher-in-new-era-of-social-networking/
 📝 Публикую пост с параметрами: owner_id=-235704834, attachments=https://techcrunch.com/2026/05/19/gamified-social-media-network-status-announces-17m-funding-to-help-usher-in-new-era-of-social-networking/
@@ -44,11 +111,11 @@ docker-compose.yml -  Контейнер для Ollama c исполняемым 
 ✅ Пост опубликован без вложений! ID: 33
 📰 Добавляем новость: Forget the feed: Status AI raises $17M to turn soc...
 ✓ Новость добавлена в базу (ID: fb8f72c2...)
-
-============================================================
-📊 ИТОГОВЫЕ РЕЗУЛЬТАТЫ:
-============================================================
-
+  
+============================================================  
+📊 ИТОГОВЫЕ РЕЗУЛЬТАТЫ:  
+============================================================  
+  
 📝 Логи выполнения:
   Новая статья: Apple announces Apple Intelligence powered accessi...
   Дубликат: ‘Survivor’ stars Kyle Fraser and Kamilla Karthiges...
