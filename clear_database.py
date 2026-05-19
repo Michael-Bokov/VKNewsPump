@@ -1,7 +1,7 @@
 # clear_database.py
 import shutil
-from pathlib import Path
-import json
+from pathlib import Path 
+import json 
 
 def clear_database():
     # Пути

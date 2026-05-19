@@ -1,7 +1,7 @@
 import json
 import hashlib
 from pathlib import Path
-import chromadb
+import chromadb 
 from chromadb.config import Settings
 from sentence_transformers import SentenceTransformer
 import numpy as np

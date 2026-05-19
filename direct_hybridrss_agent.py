@@ -42,7 +42,7 @@ class HybridRSSAgent:
         
         # Все фиды
         self.all_feeds = []
-        for feeds in self.feed_strategies.values():
+        for feeds in self.feed_strategies.values(): 
             self.all_feeds.extend(feeds)
     
     def fetch_articles(self, max_per_feed: int = 8) -> List[Dict]:

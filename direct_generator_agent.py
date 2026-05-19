@@ -4,7 +4,7 @@ import re
 from typing import Dict, Any
 import time
 
-class PostGenerator:
+class PostGenerator: 
     def __init__(self, model_name: str = "qwen2.5:7b"):
         self.model_name = model_name
         

@@ -5,7 +5,7 @@ from translation_tool import TranslationTool, TranslateFullArticleTool
 # Все инструменты для работы с новостями
 NEWS_TOOLS = [
     RssFetchTool(),
-    ListFeedsTool(),
+    ListFeedsTool(), 
     CheckFeedTool(),
     TranslationTool(),
     TranslateFullArticleTool()

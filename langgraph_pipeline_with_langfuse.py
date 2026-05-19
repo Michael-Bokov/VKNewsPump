@@ -390,7 +390,7 @@ def translate_node(state: PipelineState) -> PipelineState:
             name="translation_generation",
             input_data={"original_text_length": len(article_text)},
             output_data={"translated_text_length": len(translated)},
-            model="ollama/llama3.2",
+            model="ollama/qwen2.5:7b",
             tokens_used=len(article_text) // 4 + len(translated) // 4,
             metadata={
                 "source_language": "en",

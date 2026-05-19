@@ -66,7 +66,7 @@ def get_all_tools() -> List:
     return vk_tools + content_tools
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     # Простой тест
     print("🔧 Тестирование загрузки инструментов...")
     try:

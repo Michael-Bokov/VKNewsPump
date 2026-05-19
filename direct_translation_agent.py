@@ -4,10 +4,13 @@ import re
 from typing import Optional, Dict, Any
 import time
 
+
 class TranslationAgent:
     def __init__(self, model_name: str = "qwen2.5:7b"):
         self.model_name = model_name
         self.max_retries = 3
+        # self.host = os.getenv('OLLAMA_HOST', 'http://localhost:11435')
+        # self.client = ollama.Client(host=self.host)
         
     def detect_language(self, text: str) -> str:
         """Простое определение языка (английский или русский)"""

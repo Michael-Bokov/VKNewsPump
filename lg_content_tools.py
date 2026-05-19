@@ -78,4 +78,4 @@ def get_tool_by_name(name: str):
     for tool in CONTENT_TOOLS:
         if tool.name == name:
             return tool
-    raise ValueError(f"Инструмент '{name}' не найден")
+    raise ValueError(f"Инструмент '{name}' не найден") 

@@ -189,7 +189,7 @@ class VKPublisher:
     
     def publish_article(self, article: Dict[str, Any]) -> Dict[str, Any]:
         """Публикует статью в VK"""
-        post_text = article.get('vk_post', '')
+        post_text = article.get('vk_post', '') 
         article_url = article.get('url', '')
         
         if not post_text:

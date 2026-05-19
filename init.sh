@@ -24,7 +24,7 @@ else
     echo "ℹ️  Можно скачать позже: docker exec ollama-7b ollama pull qwen2.5:7b"
 fi
 echo "✅ Сервер запущен, модель загружается в фоне"
-echo "🔍 Проверьте: curl http://localhost:11434/api/tags"
+echo "🔍 Проверьте: curl http://localhost:11435/api/tags"
 
 # Держим процесс живым
 wait $PID

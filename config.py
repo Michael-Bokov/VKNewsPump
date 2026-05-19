@@ -26,10 +26,10 @@ class Config:
     
     # LLM настройки
     #OLLAMA_MODEL = "qwen2.5:7b"  # Модель по умолчанию
-    OLLAMA_HOST = "http://localhost:11434"
+    OLLAMA_HOST = "http://localhost:11435"
     # Ollama
     OLLAMA_MODEL = os.getenv('OLLAMA_MODEL', 'qwen2.5:7b')
-    OLLAMA_BASE_URL = os.getenv('OLLAMA_BASE_URL', 'http://localhost:11434')
+    OLLAMA_BASE_URL = os.getenv('OLLAMA_BASE_URL', 'http://localhost:11435')
     
     # RSS источники (используются гибридным агентом)
     # Эти фиды передаются в HybridRSSAgent через его внутренние настройки
